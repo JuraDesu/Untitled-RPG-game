@@ -11,15 +11,18 @@ namespace RPG
         public void StartGameLoop()
         {
             StartGameCheck.StartCommand();
-            while(StartGameCheck.IsRunning())
+            while(StartGameCheck.isRunning)
             {
                 Commands commands = new Commands();
-                commands.command = Console.ReadLine();
-                if (commands.command == null)
+                try
                 {
-                    return;
+                    commands.command = Console.ReadLine();
                 }
-                else if (commands.command.StartsWith("/"))
+                catch (ArgumentNullException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                if (commands.command.StartsWith("/"))
                 {
                     commands.CommandPrompt();
                 }

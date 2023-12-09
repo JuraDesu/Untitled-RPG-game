@@ -8,27 +8,13 @@ namespace RPG
 {
     public static class StartGameCheck
     {
-        public enum gameState
-        {
-            Running,
-            Stopped,
-        }
-        public static bool IsRunning()
-        {
-            gameState state = gameState.Stopped;
-            if (state == gameState.Running)
-            {
-                return true;
-            }
-            return false;
-        }
-        static string command = Console.ReadLine();
+        public static bool isRunning = false;
         public static void StartCommand()
         {
-            gameState state = gameState.Stopped;
-            if (command.ToLower() == "/start" && !IsRunning())
+            string command = Console.ReadLine();
+            if (command.ToLower() == "/start" && !isRunning)
             {
-                state = gameState.Running;
+                isRunning = true;
                 Console.Clear();
                 Console.WriteLine("<[==========Start Game==========]>\n" +
                     "New Game\n" +

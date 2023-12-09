@@ -24,54 +24,55 @@ namespace RPG
             Console.Clear();
             Console.WriteLine("You have 3 classes you can choose from: \nWarrior\nArcher\nMage");
             string? className = Console.ReadLine();
-            if (className.ToLower() == "warrior")
+            switch (className.ToLower())
             {
-                currentClass = CharacterClass.currentClass.Warrior;
-                character = new Character(name, 1, 0, 100, 150, 25, 15, 10, 20, 12, 15);
-                characterClass = new CharacterClass(className, "Sword4Noobs", "Strength");
-                character.Name = name;
-                characterClass.ClassName = className;
-            }
-            else if (className.ToLower() == "archer")
-            {
-                currentClass = CharacterClass.currentClass.Archer;
-                character = new Character(name, 1, 0, 100, 100, 12, 22, 16, 15, 15, 17);
-                characterClass = new CharacterClass(className, "Bow4Noobs", "Dexterity");
-                character.Name = name;
-                characterClass.ClassName = className;
-            }
-            else if (className.ToLower() == "mage")
-            {
-                currentClass = CharacterClass.currentClass.Mage;
-                character = new Character(name, 1, 0, 100, 90, 5, 12, 30, 12, 17, 10);
-                character.Name = name;
-                Console.Clear();
-                Console.WriteLine("Choose your element, you have 4 elements you can choose from\nFire\nWater\nEarth\nAir");
-                string? element = Console.ReadLine();
-                switch(element.ToLower())
-                {
-                    case "fire":
-                        characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
-                        characterClass.ClassName = className;
-                        mage.Element = element;
+                case "warrior":
+                    currentClass = CharacterClass.currentClass.Warrior;
+                    character = new Character(name, 1, 0, 100, 150, 25, 15, 10, 20, 12, 15);
+                    characterClass = new CharacterClass(className, "Sword4Noobs", "Strength");
+                    character.Name = name;
+                    characterClass.ClassName = className;
+                    break;
+                case "archer":
+                    currentClass = CharacterClass.currentClass.Archer;
+                    character = new Character(name, 1, 0, 100, 100, 12, 22, 16, 15, 15, 17);
+                    characterClass = new CharacterClass(className, "Bow4Noobs", "Dexterity");
+                    character.Name = name;
+                    characterClass.ClassName = className;
+                    break;
+                case "mage":
+                    {
+                        currentClass = CharacterClass.currentClass.Mage;
+                        character = new Character(name, 1, 0, 100, 90, 5, 12, 30, 12, 17, 10);
+                        character.Name = name;
+                        Console.Clear();
+                        Console.WriteLine("Choose your element, you have 4 elements you can choose from\nFire\nWater\nEarth\nAir");
+                        string? element = Console.ReadLine();
+                        switch (element.ToLower())
+                        {
+                            case "fire":
+                                characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
+                                characterClass.ClassName = className;
+                                mage.Element = element;
+                                break;
+                            case "water":
+                                characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
+                                characterClass.ClassName = className;
+                                mage.Element = element;
+                                break;
+                            case "earth":
+                                characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
+                                characterClass.ClassName = className;
+                                mage.Element = element;
+                                break;
+                            case "air":
+                                characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
+                                characterClass.ClassName = className;
+                                mage.Element = element;
+                                break;
+                        };
                         break;
-                    case "water":
-                        characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
-                        characterClass.ClassName = className;
-                        mage.Element = element;
-                        break;
-                    case "earth":
-                        characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
-                        characterClass.ClassName = className;
-                        mage.Element = element;
-                        break;
-                    case "air":
-                        characterClass = new Mage(className, "Staff4Noobs", "Intelligence", element);
-                        characterClass.ClassName = className;
-                        mage.Element = element;
-                        break;
-                };
-                
+                    }
             }
         }
         public static void CharacterPage()
@@ -96,11 +97,7 @@ namespace RPG
         }
         private static bool IsMage()
         {
-            if (currentClass == CharacterClass.currentClass.Mage)
-            {
-                return true;
-            }
-            return false;
+            return currentClass == CharacterClass.currentClass.Mage;
         }
         private static string? Element()
         {

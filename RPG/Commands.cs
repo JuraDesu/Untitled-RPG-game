@@ -25,7 +25,7 @@ namespace RPG
         {
             if (command.ToLower() == "/exit")
             {
-                StartGameCheck.gameState state = StartGameCheck.gameState.Stopped;
+                StartGameCheck.isRunning = false;
             }
         }
     }
