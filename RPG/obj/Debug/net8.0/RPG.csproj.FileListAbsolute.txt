@@ -12,3 +12,4 @@ C:\Users\juran\source\repos\RPG\RPG\obj\Debug\net8.0\refint\RPG.dll
 C:\Users\juran\source\repos\RPG\RPG\obj\Debug\net8.0\RPG.pdb
 C:\Users\juran\source\repos\RPG\RPG\obj\Debug\net8.0\RPG.genruntimeconfig.cache
 C:\Users\juran\source\repos\RPG\RPG\obj\Debug\net8.0\ref\RPG.dll
+C:\Users\juran\source\repos\RPG\RPG\obj\Debug\net8.0\RPG.sourcelink.json
