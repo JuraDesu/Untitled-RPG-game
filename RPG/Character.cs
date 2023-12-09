@@ -76,6 +76,17 @@ namespace RPG
             set { charisma = value; }
             get { return charisma; }
         }
-
+        public static int HealthCount(int constitution, int level)
+        {
+                return (constitution * 10) + (int)Math.Pow(level - 1, 2);
+        }
+        public static void HealthLoop()
+        {
+            CharacterClass.currentClass current = CharacterCreation.currentClass;
+            while (current != CharacterClass.currentClass.None)
+            {
+                hp = HealthCount(constitution, level);
+            }
+        }
     }
 }

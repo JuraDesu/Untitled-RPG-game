@@ -14,6 +14,7 @@ namespace RPG
             CharacterCommand();
             ExitCommand();
             GiveXPCommand();
+            SetConstitionCommand();
         }
         private void CharacterCommand()
         {
@@ -32,6 +33,15 @@ namespace RPG
                 float amount = float.Parse(Console.ReadLine());
                 Character.XP += (int)amount;
             }
+        }
+        private int SetConstitionCommand()
+        {
+            if (command.ToLower() == "/set constitution")
+            {
+                int amount = int.Parse(Console.ReadLine());
+                Character.Constitution = amount;
+            }
+            return Character.Constitution;
         }
     }
 }

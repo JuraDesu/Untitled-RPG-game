@@ -11,7 +11,7 @@ namespace RPG
 {
     public static class CharacterCreation
     {
-        static CharacterClass.currentClass currentClass;
+        public static CharacterClass.currentClass currentClass;
         static ProgressTracking progressbar = new ProgressTracking();
         public static void CreateCharacter()
         {
@@ -30,7 +30,6 @@ namespace RPG
             {
                 case "warrior":
                     currentClass = CharacterClass.currentClass.Warrior;
-                    Character.HP = 150;
                     Character.Strength= 25;
                     Character.Dexterity = 15;
                     Character.Intelligence = 10;
@@ -42,7 +41,6 @@ namespace RPG
                     break;
                 case "archer":
                     currentClass = CharacterClass.currentClass.Archer;
-                    Character.HP = 100;
                     Character.Strength = 12;
                     Character.Dexterity = 22;
                     Character.Intelligence = 16;
@@ -55,7 +53,6 @@ namespace RPG
                 case "mage":
                     {
                         currentClass = CharacterClass.currentClass.Mage;
-                        Character.HP = 90;
                         Mage.Mana = 100;
                         Character.Strength = 5;
                         Character.Dexterity = 12;
@@ -85,8 +82,8 @@ namespace RPG
                         };
                         break;
                     }
-                
             }
+            Character.HP = Character.HealthCount(Character.Constitution, Character.Level);
         }
         public static void CharacterPage()
         {

@@ -26,6 +26,8 @@ namespace RPG
                 {
                     commands.CommandPrompt();
                 }
+                LevelSystem.LevelUP();
+                Character.HealthLoop();
             }
         }
     }
