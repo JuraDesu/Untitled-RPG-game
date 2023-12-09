@@ -8,9 +8,9 @@ namespace RPG
 {
     public class CharacterClass
     {
-        private string? className;
-        private string? mainWeapon;
-        private string? dmgAtribute;
+        private static string? className;
+        private static string? mainWeapon;
+        private static string? dmgAtribute;
         public enum currentClass
         {
             None = 0,
@@ -19,47 +19,38 @@ namespace RPG
             Mage,
         }
 
-        public string? ClassName
+        public static string? ClassName
         {
             set { className = value; }
             get { return className; }
         }
 
-        public string? MainWeapon
+        public static string? MainWeapon
         {
             set {  mainWeapon = value; }
             get { return mainWeapon; }
         }
-        public string? DmgAtribute
+        public static string? DmgAtribute
         {
             set {  dmgAtribute = value; }
             get { return dmgAtribute; }
         }
-        public CharacterClass(string? className, string? mainWeapon, string? dmgAtribute) 
-        {
-            this.className = className;
-            this.mainWeapon = mainWeapon;
-            this.dmgAtribute = dmgAtribute;
-        }
+        
     }
     public class Mage : CharacterClass
     {
-        string? element;
-        int mana;
-        public string? Element
+        static string? element;
+        static int mana;
+        public static string? Element
         {
             set { element = value; }
             get { return element; }
         }
-        public int Mana
+        public static int Mana
         {
             set {  mana = value; }
             get { return mana; }
         }
-        public Mage(string? className, string? mainWeapon, string? dmgAtribute, string? element, int mana) : base(className, mainWeapon, dmgAtribute)
-        {
-            this.element = element;
-            this.mana = mana;
-        }
+        
     }
 }

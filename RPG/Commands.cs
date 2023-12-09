@@ -13,19 +13,24 @@ namespace RPG
         { 
             CharacterCommand();
             ExitCommand();
+            GiveXPCommand();
         }
         private void CharacterCommand()
         {
-            if (command == "/char")
-            {
-                CharacterCreation.CharacterPage();
-            }
+            if (command == "/char") CharacterCreation.CharacterPage();
         }
-        private void ExitCommand() 
+        private void ExitCommand()
         {
-            if (command.ToLower() == "/exit")
+            if (command.ToLower() == "/exit") StartGameCheck.isRunning = false;
+        }
+        private void GiveXPCommand()
+        {
+            if (command.ToLower() == "/give xp")
             {
-                StartGameCheck.isRunning = false;
+                Console.Clear();
+                Console.Write("Enter an amount: ");
+                float amount = float.Parse(Console.ReadLine());
+                Character.XP += (int)amount;
             }
         }
     }

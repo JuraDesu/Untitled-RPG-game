@@ -10,7 +10,7 @@ namespace RPG
         public static void Main(string[] args)
         {
             GameLoop loop = new GameLoop();
-            Console.WriteLine("Enter a command: ");
+            Console.Write("Enter a command: ");
             loop.StartGameLoop();
         }
     }
