@@ -1,0 +1,62 @@
+namespace RPG
+{
+    public class ProgressBar
+    {
+        private int currentProgress;
+        private int totalProgress;
+
+        public ProgressBar(int currentProgress, int totalProgress)
+        {
+            this.currentProgress = currentProgress;
+            this.totalProgress = totalProgress;
+        }
+
+        public string CountProgress(int progressBarWidth)
+        {
+            int progress = (int)Math.Ceiling((double)currentProgress / totalProgress * progressBarWidth);
+            string progressBar = "";
+
+            for (int i = 0; i < progressBarWidth; i++)
+            {
+                if (i < progress)
+                    progressBar += "#";
+                else
+                    progressBar += "-";
+            }
+
+            return progressBar;
+        }
+    }
+}
+
+namespace RPG
+{
+    public class ProgressBar
+    {
+        private int currentProgress;
+        private int totalProgress;
+
+        public ProgressBar(int currentProgress, int totalProgress)
+        {
+            this.currentProgress = currentProgress;
+            this.totalProgress = totalProgress;
+        }
+
+        public string CountProgress(int progressBarWidth)
+        {
+            int progress = (int)Math.Ceiling((double)currentProgress / totalProgress * progressBarWidth);
+            string progressBar = "";
+
+            for (int i = 0; i < progressBarWidth; i++)
+            {
+                if (i < progress)
+                    progressBar += "#";
+                else
+                    progressBar += "-";
+            }
+
+            return progressBar;
+        }
+    }
+}
+
