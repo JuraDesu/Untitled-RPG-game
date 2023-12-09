@@ -45,14 +45,21 @@ namespace RPG
     public class Mage : CharacterClass
     {
         string? element;
+        int mana;
         public string? Element
         {
-            set {  element = value; }
+            set { element = value; }
             get { return element; }
         }
-        public Mage(string? className, string? mainWeapon, string? dmgAtribute, string? element) : base(className, mainWeapon, dmgAtribute)
+        public int Mana
+        {
+            set {  mana = value; }
+            get { return mana; }
+        }
+        public Mage(string? className, string? mainWeapon, string? dmgAtribute, string? element, int mana) : base(className, mainWeapon, dmgAtribute)
         {
             this.element = element;
+            this.mana = mana;
         }
     }
 }
