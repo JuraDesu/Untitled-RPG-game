@@ -1,5 +1,6 @@
 ﻿using RPG;
 using RPG.Game;
+using RPG.Items.Test;
 
 namespace ConsoleRPGV3;
 
@@ -11,20 +12,22 @@ public class Warrior : Character
     public Warrior(string name) : base()
     {
         base.name = name;
+        hpAmplifier = 15;
         id++;
-        hp = 200;
-        maxHP = hp;
+        CalculateHP();
+        CalculateDMG();
         
-        attributes.strength = 20;
-        attributes.speed = 10;
-        attributes.intelligence = 7;
-        attributes.constitution = 15;
-        attributes.charisma = 30;
-        attributes.luck = 14;
+        attributes.strength = 20f;
+        attributes.speed = 10f;
+        attributes.intelligence = 7f;
+        attributes.constitution = 15f;
+        attributes.charisma = 30f;
+        attributes.luck = 14f;
 
+        charClass = CharacterClass.Warrior;
+        
         weapon = new TestWeapon();
         
-        charClass = CharacterClass.Warrior;
         character = this;
     }
     
@@ -45,12 +48,13 @@ public class Warrior : Character
                $"{Decorations.Titlebar("Equipment", 60, ConsoleColor.Cyan)}\n" +
                $"{weapon.ToString()}" +
                $"{Decorations.Titlebar("Attributes", 60, ConsoleColor.Cyan)}\n\n" +
+               $"Damage: {dmg}\n\n" +
                $"Strength: \t{attributes.strength}\n" +
                $"Speed: \t\t{attributes.speed}\n" +
                $"Intelligence: \t{attributes.intelligence}\n" +
                $"Constitution: \t{attributes.constitution}\n" +
                $"Charisma: \t{attributes.charisma}\n" +
-               $"Luck: \t\t{attributes.luck}\n" +
+               $"Luck: \t\t{attributes.luck}\n\n" +
 
                $"{Decorations.Separator(60)}";
     }

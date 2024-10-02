@@ -20,14 +20,14 @@ public class Decorations
         titleBarBuilder.Append(separator2);
         return titleBarBuilder.ToString();
     }
-    public static string ProgressBar(int value, int compared, ConsoleColor PBcolor)
+    public static string ProgressBar(float value, float compared, ConsoleColor PBcolor)
     {
         char empty = '-';
         char full = '#';
         string progressbar = "";
         int progressBarWidth = 20;
         
-        int progress = (int)Math.Ceiling((double)value / compared * progressBarWidth);
+        double progress = Math.Ceiling(value / compared * progressBarWidth);
 
         for (int i = 0; i < progressBarWidth; i++)
         {
@@ -35,6 +35,6 @@ public class Decorations
             else progressbar += empty;
         }
 
-        return $"[{progressbar.Color(PBcolor)}] {(int)((float)value / (float)compared * 100)} %";
+        return $"[{progressbar.Color(PBcolor)}] {value / compared * 100f} %";
     }
 }
