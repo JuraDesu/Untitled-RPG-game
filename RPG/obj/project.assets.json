@@ -39,11 +39,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/ConsoleRPGV3.csproj",
+      "projectUniqueName": "/home/h4d3s/Untitled-RPG-game/RPG/ConsoleRPGV3.csproj",
       "projectName": "ConsoleRPGV3",
-      "projectPath": "/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/ConsoleRPGV3.csproj",
+      "projectPath": "/home/h4d3s/Untitled-RPG-game/RPG/ConsoleRPGV3.csproj",
       "packagesPath": "/home/h4d3s/.nuget/packages/",
-      "outputPath": "/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/",
+      "outputPath": "/home/h4d3s/Untitled-RPG-game/RPG/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/h4d3s/.nuget/NuGet/NuGet.Config"
