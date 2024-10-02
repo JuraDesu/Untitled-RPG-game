@@ -1,47 +1,83 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsoleRPGV3;
+using RPG.Game;
+namespace RPG.Cmd;
 
-namespace RPG
+public class Commands
 {
-    public class Commands
+    public static Dictionary<int, string> commands = new Dictionary<int, string>();
+    private static char prefix = '/';
+    public static async Task ProcessCommand(string command)
     {
-        public string? command;
-        public void CommandPrompt()
-        { 
-            CharacterCommand();
-            ExitCommand();
-            GiveXPCommand();
-            SetConstitionCommand();
-        }
-        private void CharacterCommand()
+        if (command.StartsWith(prefix))
         {
-            if (command == "/char") CharacterCreation.CharacterPage();
+            ExitCommand(command);
+            HelpCommand(command);
+            StatsCommand(command);
+            SettingsCommand(command);
+            Save(command);
+            #if DEBUG
+            XPCommand(command);
+            #endif
         }
-        private void ExitCommand()
+    }
+    public static void InitCommands()
+    {
+        commands.Add(0, "exit");
+        commands.Add(1, "help");
+        commands.Add(2, "stats");
+        commands.Add(3, "settings");
+        commands.Add(4, "save");
+        #if DEBUG
+        commands.Add(103, "xp");
+        #endif
+    }
+    private static void ExitCommand(string command)
+    {
+        if(commands.ContainsValue("exit") && command.Equals("/exit"))
+            Loop.isRunning = false;
+    }
+
+    private static void HelpCommand(string command)
+    {
+        if (commands.ContainsValue("help") && command.Equals("/help"))
         {
-            if (command.ToLower() == "/exit") StartGameCheck.isRunning = false;
-        }
-        private void GiveXPCommand()
-        {
-            if (command.ToLower() == "/give xp")
+            Console.WriteLine("Available commands:");
+            foreach (var cmd in commands)
             {
-                Console.Clear();
-                Console.Write("Enter an amount: ");
-                float amount = float.Parse(Console.ReadLine());
-                Character.XP += (int)amount;
+                Console.WriteLine(prefix + "{0}", cmd.Value);
             }
         }
-        private int SetConstitionCommand()
+    }
+    private static void StatsCommand(string command)
+    {
+        if (commands.ContainsValue("stats") && command.Equals("/stats"))
         {
-            if (command.ToLower() == "/set constitution")
-            {
-                int amount = int.Parse(Console.ReadLine());
-                Character.Constitution = amount;
-            }
-            return Character.Constitution;
+            Console.Clear();
+            Console.WriteLine(Character.GetInstance().ToString());
+        }
+    }
+
+    private static void XPCommand(string command)
+    {
+        if (commands.ContainsValue("xp") && command.Equals($"/xp"))
+        {
+            Character.GetInstance().AddXP();
+        }
+    }
+
+    private static void SettingsCommand(string command)
+    {
+        if (commands.ContainsValue("settings") && command.Equals("/settings"))
+        {
+            Settings.ShowSettings();
+        }
+    }
+
+    private static void Save(string command)
+    {
+        if(commands.ContainsValue("save") && command.Equals("/save"))
+        {
+            CharacterFactory.GetInstance().SaveCharacter();
         }
     }
 }

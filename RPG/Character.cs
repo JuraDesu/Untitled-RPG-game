@@ -1,92 +1,209 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RPG.Game;
+using RPG;
+using ANSIConsole;
+using ConsoleRPGV3;
 
-namespace RPG
+namespace RPG.Game;
+public enum CharacterClass
 {
-    public class Character
-    {
-        private static string? name;
-        private static int level;
-        private static int xp;
-        private static int toNextLevel;
-        private static int hp;
-        private static int strength;
-        private static int dexterity;
-        private static int intelligence;
-        private static int constitution;
-        private static int luck;
-        private static int charisma;
+    None = 0,
+    Warrior,
+    Archer,
+    Mage,
+    Rogue,
+    Ninja,
+    Assasin,
+    Brawler,
+}
 
-        public static string? Name
+public struct Attributes
+{
+    public int strength;
+    public int speed;
+    public int intelligence;
+    public int constitution;
+    public int charisma;
+    public int luck;
+}
+
+public abstract class Character
+{
+    protected Attributes attributes;
+    public string Name
+    {
+        get => name;
+        set => name = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    public int Id
+    {
+        get => id;
+        set => id = value;
+    }
+
+    public int Level
+    {
+        get => level;
+        set => level = value;
+    }
+
+    public int Xp
+    {
+        get => xp;
+        set => xp = value;
+    }
+
+    public int ToNext
+    {
+        get => toNext;
+        set => toNext = value;
+    }
+
+    public int Hp
+    {
+        get => hp;
+        set => hp = value;
+    }
+
+    public int MaxHp
+    {
+        get => maxHP;
+        set => maxHP = value;
+    }
+
+    public int Dmg
+    {
+        get => dmg;
+        set => dmg = value;
+    }
+
+    public int Strength
+    {
+        get => attributes.strength;
+        set => attributes.strength = value;
+    }
+
+    public int Speed
+    {
+        get => attributes.speed;
+        set => attributes.speed = value;
+    }
+
+    public int Intelligence
+    {
+        get => attributes.intelligence;
+        set => attributes.intelligence = value;
+    }
+
+    public int Constitution
+    {
+        get => attributes.constitution;
+        set => attributes.constitution = value;
+    }
+
+    public int Charisma
+    {
+        get => attributes.charisma;
+        set => attributes.charisma = value;
+    }
+
+    public int Luck
+    {
+        get => attributes.luck;
+        set => attributes.luck = value;
+    }
+
+    public CharacterClass CharClass
+    {
+        get => charClass;
+        set => charClass = value;
+    }
+
+    public static Character Character1
+    {
+        get => character;
+        set => character = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    public ConsoleColor Color
+    {
+        get => color;
+        set => color = value;
+    }
+
+    public Weapon Weapon
+    {
+        get => weapon;
+        set => weapon = value;
+    }
+
+    public string name;
+    protected int id;
+    public int level;
+    protected int xp;
+    protected int toNext;
+    
+    protected int hp;
+    protected int maxHP;
+    protected int dmg;
+    
+    
+    
+    //Equipment
+    
+    
+    protected Weapon weapon;
+    /*
+    protected Armor helmet;
+    protected Armor chestplate;
+    protected Armor pants;
+    protected Armor boots;
+    */
+    
+    public CharacterClass charClass;
+
+    protected static Character character;
+    //Misc.
+    public ConsoleColor color;
+
+    public static Character GetInstance()
+    {
+        if(character != null)
+            return character;
+        return null;
+    }
+    protected Character()
+    {
+        color = ConsoleColor.Red;
+        Id = 0;
+        level = 1;
+        toNext = 100;
+        xp = 0;
+    }
+    
+    //Basic functions
+    public int AddXP()
+    {
+        Console.Write("Add amount of XP: ");
+        int amount = int.Parse(Console.ReadLine());
+        return xp += amount;
+    }
+    public async Task CalculateStats()
+    {
+        double amplifier = 2.5;
+        while (xp >= toNext)
         {
-            set { name = value; }
-            get { return name; }
+            level++;
+            xp -= toNext;
+            toNext += (int)Math.Round(Math.Log(toNext) * level + amplifier);
+            CalculateDMG();
+            Console.WriteLine(
+                $"Congratulations {name.Color(color)} you leveled up you are now level {level.ToString().Color(ConsoleColor.Cyan)}");
         }
-        public static int Level
-        {
-            set {  level = value; }
-            get { return level; }
-        }
-        public static int XP
-        {
-            set {  xp = value; }
-            get { return xp; }
-        }
-        public static int ToNextLevel
-        {
-            set {  toNextLevel = value; }
-            get { return toNextLevel; }
-        }
-        public static int HP
-        {
-            set {  hp = value; }
-            get { return hp; }
-        }
-        public static int Strength
-        {
-            set {  strength = value; }
-            get { return strength; }
-        }
-        public static int Dexterity
-        {
-            set {  dexterity = value; }
-            get { return dexterity; }
-        }
-        public static int Intelligence
-        {
-            set { intelligence = value; }
-            get { return intelligence; }
-        }
-        public static int Constitution
-        {
-            set { constitution = value; }
-            get { return constitution; }
-        }
-        public static int Luck
-        {
-            set {  luck = value; }
-            get { return luck; }
-        }
-        public static int Charisma
-        {
-            set { charisma = value; }
-            get { return charisma; }
-        }
-        public static int HealthCount(int constitution, int level)
-        {
-                return (constitution * 10) + (int)Math.Pow(level - 1, 2);
-        }
-        public static void HealthLoop()
-        {
-            CharacterClass.currentClass current = CharacterCreation.currentClass;
-            while (current != CharacterClass.currentClass.None)
-            {
-                hp = HealthCount(constitution, level);
-            }
-        }
+    }
+    
+    public virtual void CalculateDMG()
+    {
+        dmg = 0;
     }
 }

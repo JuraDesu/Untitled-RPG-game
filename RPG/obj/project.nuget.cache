@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oFHthATzsyIDlQd+2wAqg/8IG/GEwfSvYND9RGSYc9jHZjVvpTt8yPncjv1IRaEG5Zyy56S9JBJmOCah/R0yxw==",
+  "dgSpecHash": "cCYqSYXiizM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\juran\\source\\repos\\RPG\\RPG\\RPG.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/ConsoleRPGV3.csproj",
+  "expectedPackageFiles": [
+    "/home/h4d3s/.nuget/packages/ansi.console/2.5.0/ansi.console.2.5.0.nupkg.sha512",
+    "/home/h4d3s/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+  ],
   "logs": []
 }
