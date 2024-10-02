@@ -1,0 +1,34 @@
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.exe
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.deps.json
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.runtimeconfig.json
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.dll
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.pdb
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ANSIConsole.dll
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.csproj.AssemblyReference.cache
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.AssemblyInfoInputs.cache
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.AssemblyInfo.cs
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.csproj.CoreCompileInputs.cache
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleR.611BB725.Up2Date
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.dll
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/refint/ConsoleRPGV3.dll
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.pdb
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.genruntimeconfig.cache
+C:/Users/juran/RiderProjects/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ref/ConsoleRPGV3.dll
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.csproj.AssemblyReference.cache
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.GeneratedMSBuildEditorConfig.editorconfig
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.AssemblyInfoInputs.cache
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.AssemblyInfo.cs
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.csproj.CoreCompileInputs.cache
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.dll
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/refint/ConsoleRPGV3.dll
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.pdb
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.deps.json
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.runtimeconfig.json
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.dll
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ConsoleRPGV3.pdb
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/bin/Release/net8.0/ANSIConsole.dll
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.csproj.CopyComplete
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ConsoleRPGV3.genruntimeconfig.cache
+/home/h4d3s/Desktop/Veci co si chci nwechat/ConsoleRPGV3/ConsoleRPGV3/obj/Release/net8.0/ref/ConsoleRPGV3.dll
