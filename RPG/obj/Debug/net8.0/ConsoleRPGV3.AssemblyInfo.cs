@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleRPGV3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8f0888ebf28b215ad9b93442a11d7624f5a2d79")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff9023f889c9617ff9bc652621f4c11f4d349d77")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsoleRPGV3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsoleRPGV3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
