@@ -5,9 +5,11 @@ It has many bugs, because I am a bad programmer
 # Running this program
 
 ## Dependencies
-dotnet 8
+dotnet version 8
 ```bash
 cd Untitled-RPG-Game/RPG
-dotnet Program.cs
+dotnet run Program.cs
 ```  
-  
+# Supported platforms
+Windows 10
+Linux
