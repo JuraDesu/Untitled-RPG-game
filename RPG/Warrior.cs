@@ -1,8 +1,8 @@
 ﻿using RPG;
 using RPG.Game;
-using RPG.Items.Test;
+using RPG.Items;
 
-namespace ConsoleRPGV3;
+namespace RPG.Game;
 
 public class Warrior : Character
 {
@@ -23,10 +23,10 @@ public class Warrior : Character
         attributes.constitution = 15f;
         attributes.charisma = 30f;
         attributes.luck = 14f;
-
-        charClass = CharacterClass.Warrior;
         
-        weapon = new TestWeapon();
+        charClass = CharacterClass.Warrior;
+
+        weapon = Program.warriorWeapons[1];
         
         character = this;
     }

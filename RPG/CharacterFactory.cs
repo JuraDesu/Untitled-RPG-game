@@ -47,31 +47,5 @@ public class CharacterFactory
         }
     }
 
-    public void SaveCharacter()
-    {
-        Directory.CreateDirectory("saves");
-        string filename = $"saves/{Character.GetInstance().Name}.json";
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string jsonString = JsonSerializer.Serialize(Character.GetInstance(), options);
-        File.WriteAllText(filename, jsonString);
-#if DEBUG
-        Console.WriteLine("Saved character to file: " + filename + "\n");
-        Console.WriteLine(File.ReadAllText(filename));
-#endif
-    }
-
-    public void LoadCharacter(string name)
-    {
-        string jsonString = File.ReadAllText("saves/"+ name + ".json");
-        
-        var jsonDoc = JsonDocument.Parse(jsonString);
-        int charClass = jsonDoc.RootElement.GetProperty("CharClass").GetInt32();
-
-        switch (charClass)
-        {
-            case 1:
-                character = JsonSerializer.Deserialize<Warrior>(jsonString);
-                break;
-        }
-    }
+    public Character Character { get => character; set => character = value; }
 }

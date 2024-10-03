@@ -1,4 +1,5 @@
 ﻿using ConsoleRPGV3;
+using RPG.Backend.Save;
 using RPG.Game;
 namespace RPG.Cmd;
 
@@ -77,7 +78,7 @@ public class Commands
     {
         if(commands.ContainsValue("save") && command.Equals("/save"))
         {
-            CharacterFactory.GetInstance().SaveCharacter();
+            SavingLoadingSystem.SaveCharacter();
         }
     }
 }

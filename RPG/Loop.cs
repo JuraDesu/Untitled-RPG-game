@@ -1,6 +1,7 @@
 ﻿
 using ANSIConsole;
 using RPG.Backend;
+using RPG.Backend.Save;
 using RPG.Cmd;
 
 namespace RPG.Game;
@@ -33,7 +34,7 @@ public class Loop
             Console.Clear();
             Console.WriteLine("Select the character to load: \n" + FileLoader.GetDirectoryContents("saves"));
             Console.Write($"["+ "Character".Color(ConsoleColor.Cyan) + "]$: ");
-            CharacterFactory.GetInstance().LoadCharacter(Console.ReadLine());
+            SavingLoadingSystem.LoadCharacter(Console.ReadLine());
             Console.WriteLine($"Successfully loaded character {Character.GetInstance().name}");
             isRunning = true;
         }

@@ -6,13 +6,22 @@ namespace RPG.Items;
 public class Weapon
 {
     public string name;
-    protected int minDamage;
-    protected int maxDamage;
-    protected CharacterClass reqClass;
-    protected Rarity rarity;
+    private int minDamage;
+    private int maxDamage;
+    private CharacterClass reqClass;
+    private Rarity rarity;
     public override string ToString()
     {
         return $"Weapon: \t{name} ({minDamage}-{maxDamage}) ~{(minDamage + maxDamage) / 2}\n";
+    }
+
+    public Weapon(string name, int minDamage, int maxDamage, CharacterClass reqClass, Rarity rarity)
+    {
+        this.name = name;
+        this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
+        this.reqClass = reqClass;
+        this.rarity = rarity;
     }
 
     protected void SetRarityColor()
