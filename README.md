@@ -11,5 +11,6 @@ cd Untitled-RPG-Game/RPG
 dotnet run Program.cs
 ```  
 # Supported platforms
-Windows 10
-Linux
+## Windows 10
+## Windows 11
+## Linux
